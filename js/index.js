@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", async () => {
-    const allArticlesContainer = document.getElementById("all-articles-container");
+    const articlesContainer = document.getElementById("articles-container");
   
-    const fetchAllArticles = async () => {
+    const fetchFeaturedArticles = async () => {
       try {
         const response = await fetch('https://api.is373project.me/jsonapi');
         if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
@@ -9,30 +9,30 @@ document.addEventListener("DOMContentLoaded", async () => {
         const data = await response.json();
         return data.data;
       } catch (error) {
-        console.error("Error fetching all articles:", error);
+        console.error("Error fetching featured articles:", error);
       }
     };
   
-    const renderAllArticles = (articles) => {
+    const renderFeaturedArticles = (articles) => {
       if (!articles || articles.length === 0) {
-        allArticlesContainer.innerHTML = "<p>No articles available.</p>";
+        articlesContainer.innerHTML = "<p>No featured articles available.</p>";
         return;
       }
   
-      allArticlesContainer.innerHTML = articles
+      articlesContainer.innerHTML = articles
+        .slice(0, 3) // Display only 3 articles
         .map(
           (article) => `
           <div class="article-card">
             <h3>${article.attributes.title}</h3>
-            <p>${article.attributes.body.processed.slice(0, 200)}...</p>
-            <p><strong>Published:</strong> ${new Date(article.attributes.created).toLocaleDateString()}</p>
+            <p>${article.attributes.body.processed.slice(0, 150)}...</p>
             <a href="./articles.html?id=${article.id}" class="read-more-link">Read More</a>
           </div>`
         )
         .join("");
     };
   
-    const articles = await fetchAllArticles();
-    renderAllArticles(articles);
+    const articles = await fetchFeaturedArticles();
+    renderFeaturedArticles(articles);
   });
   
