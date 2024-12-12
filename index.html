@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Insights</title>
   <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
   <!-- Header Section -->
   <header class="header">
@@ -36,7 +38,8 @@
   <!-- Featured Blogs Section -->
   <section class="featured-blogs">
     <h2>Featured AI Articles</h2>
-    <div id="articles-container" class="blogs-grid"></div>
+    <div id="articles-container" class="blogs-grid">
+    </div>
     <div class="view-more">
       <a href="./articles.html" class="view-more-link">View All Articles</a>
     </div>
@@ -57,7 +60,38 @@
       <a href="#">Twitter</a>
     </div>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-  <script src="./js/articles.js"></script>
+  <script>
+
+    const contentDiv = document.getElementById('articles-container');
+    /*axios makes request to api to get content*/
+    axios.get('https://api.is373project.me/jsonapi/node/article')
+      .then(response => {
+        /*axios stores the api data inside variable data*/
+        var data = response.data;
+        /*data.data.slice(0,3).forEach cycles through the first three contents stored on our backend api*/
+        data.data.slice(0, 3).forEach(d => {
+          //creates a new div element 
+          const blogCard = document.createElement('div');
+          //creates a class called blog-card to blog card element
+          blogCard.classList.add('blog-card');
+          //Sets the inner HTML of the blog card, inserting the article's title and body.
+          blogCard.innerHTML = `
+        <div class="blog-card-content">
+          <h3>${d.attributes.title}</h3>
+          <p>${d.attributes.body.value}</p>
+        </div>
+      `;
+          //adds content to dom.
+          contentDiv.appendChild(blogCard);
+        })
+
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  </script>
 </body>
+
 </html>
