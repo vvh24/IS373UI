@@ -18,16 +18,30 @@
     </nav>
   </header>
 
-<!-- Articles Section -->
-<section class="articles">
+  <!-- Articles Section -->
+  <section class="articles">
     <h1>Explore All AI Articles</h1>
     <p class="subtitle">Dive into our collection of insightful AI content, from healthcare advancements to ethical dilemmas and future trends.</p>
+    
+    <!-- Search and Filter -->
+    <div class="search-filter">
+      <input type="text" placeholder="Search articles..." class="search-bar">
+      <select class="filter-dropdown">
+        <option value="all">All Topics</option>
+        <option value="healthcare">Healthcare</option>
+        <option value="ethics">Ethics</option>
+        <option value="future">Future of AI</option>
+      </select>
+    </div>
+
+    <!-- Articles Grid -->
     <div id="all-articles-container" class="articles-grid">
       <div class="article-card">
         <img src="./images/healthcare.jpg" alt="Healthcare AI">
         <div class="article-content">
           <h3>AI in Healthcare</h3>
           <p>Discover how AI is revolutionizing healthcare with innovative solutions.</p>
+          <span class="article-tag">Healthcare</span>
         </div>
       </div>
       <div class="article-card">
@@ -35,6 +49,7 @@
         <div class="article-content">
           <h3>AI Ethics</h3>
           <p>Explore the ethical implications of artificial intelligence technologies.</p>
+          <span class="article-tag">Ethics</span>
         </div>
       </div>
       <div class="article-card">
@@ -42,6 +57,7 @@
         <div class="article-content">
           <h3>Future of AI</h3>
           <p>Get insights into the future trends and advancements in AI.</p>
+          <span class="article-tag">Future</span>
         </div>
       </div>
       <div class="article-card">
@@ -49,15 +65,25 @@
         <div class="article-content">
           <h3>Adapting to AI</h3>
           <p>Learn how AI is shaping the world and how you can adapt to it.</p>
+          <span class="article-tag">AI World</span>
         </div>
       </div>
     </div>
+
+    <!-- Pages -->
+    <div class="pagination">
+      <button class="prev">Previous</button>
+      <span>Page 1 of 1</span>
+      <button class="next">Next</button>
+    </div>
   </section>
 
+  <!-- Footer Section -->
   <footer class="footer">
     <div class="quick-links">
       <a href="#">Privacy Policy</a>
       <a href="#">Terms of Service</a>
+      <a href="./contact.html">Contact Us</a>
     </div>
     <div class="newsletter">
       <input type="email" placeholder="Your email">
