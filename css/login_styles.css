@@ -1,108 +1,160 @@
-body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #181144, #000);
-    color: #fff;
+/* Reset */
+* {
     margin: 0;
     padding: 0;
-}
-
-header {
-    padding: 1rem;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* General Styles */
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #03010a, #3507bf);
+    color: #333;
+  }
+  
+  /* Container */
+  .container {
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  /* Header */
+  header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: #03010a;
+    color: white;
+    padding: 10px 5%;
+  }
+  
+  .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.logo {
-    font-size: 1.5rem;
+  }
+  
+  .navbar .logo {
+    font-size: 24px;
     font-weight: bold;
-}
-
-.nav-links {
-    list-style: none;      
-    display: flex;         
-    gap: 20px;             
-    padding: 0;            
-    margin: 0;            
-}
-
-.nav-links li a {
-    text-decoration: none; 
-    color: black;          
-    font-weight: bold;     
-}
-
-
-.login-btn {
-    font-weight: bold;
-}
-
-.container {
-    max-width: 500px;
-    margin: 5rem auto;
-    padding: 2rem;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-}
-
-h2 {
-    margin-bottom: 1.5rem;
-    font-size: 2rem;
-}
-
-.form-group {
-    margin-bottom: 1rem;
+    color: #ff8c42;
+  }
+  
+  .navbar nav a {
+    text-decoration: none;
+    color: white;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar nav a:hover {
+    color: #ff3e00;
+  }
+  
+  /* Sign In Container */
+  .signin-container h2 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #1a1a2e;
+  }
+  
+  .signin-container form {
+    margin: 20px 0;
     text-align: left;
-}
-
-.form-group label {
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
     display: block;
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
-}
-
-input {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .form-group input {
     width: 100%;
-    padding: 0.75rem;
-    border: none;
+    padding: 10px;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    background-color: #222;
-    color: #fff;
-    font-size: 1rem;
-}
-
-input::placeholder {
-    color: #777;
-}
-
-.form-links {
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-group input:focus {
+    border-color: #ff8c42;
+  }
+  
+  .form-links {
     text-align: right;
-    margin-bottom: 1.5rem;
-}
-
-.forgot-password {
-    color: #6e80f3;
+    margin-bottom: 20px;
+  }
+  
+  .form-links .forgot-password {
     text-decoration: none;
-}
-
-.signin-btn {
+    color: #ff8c42;
+    font-size: 0.9rem;
+  }
+  
+  .form-links .forgot-password:hover {
+    text-decoration: underline;
+  }
+  
+  .signin-btn {
     width: 100%;
-    padding: 1rem;
-    background-color: #6e80f3;
-    color: #fff;
+    padding: 10px;
+    font-size: 1rem;
+    color: white;
+    background: #03010a;
     border: none;
     border-radius: 5px;
-    font-size: 1rem;
     cursor: pointer;
-}
-
-.register-link {
-    margin-top: 1rem;
-}
-
-.register-link a {
-    color: #6e80f3;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .signin-btn:hover {
+    background: #ff8c42;
+    transform: scale(1.05);
+  }
+  
+  .register-link {
+    margin-top: 20px;
+    font-size: 0.9rem;
+  }
+  
+  .register-link a {
     text-decoration: none;
-}
-
+    color: #ff8c42;
+    font-weight: bold;
+  }
+  
+  .register-link a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    header .nav-links {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .container {
+      padding: 15px;
+    }
+  
+    .signin-container h2 {
+      font-size: 1.5rem;
+    }
+  }
+  
