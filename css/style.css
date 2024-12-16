@@ -1,42 +1,199 @@
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .header {
-    background-color: #333;
-    color: #fff;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .navbar a {
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
-  }
-  
-  .hero {
-    background-color: #f4f4f4;
-    text-align: center;
-    padding: 50px;
-  }
-  
-  .hero-buttons button {
-    margin: 10px;
-  }
-  
-  .featured-blogs, .articles, .about {
-    padding: 20px;
-  }
-  
-  .footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-  }
-  
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #0d0d2b;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+input, button {
+  font-size: 16px;
+}
+
+button {
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #1a1a3c;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a {
+  color: #ffffff;
+}
+
+.search-bar input {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ffffff;
+  background-color: #1a1a3c;
+  color: #ffffff;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: url('./images/ai2.jpg') no-repeat center center/cover;
+  color: #ffffff;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.hero-buttons .btn-secondary {
+  background-color: transparent;
+  color: #4a90e2;
+  border: 2px solid #4a90e2;
+}
+
+.hero-buttons .btn-secondary:hover {
+  background-color: #4a90e2;
+  color: #ffffff;
+}
+
+.hero-buttons button {
+  background-color: #4a90e2;
+  color: #ffffff;
+}
+
+/* Featured Blogs Section */
+.featured-blogs {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.featured-blogs h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.blogs-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.blog-card {
+  background-color: #1a1a3c;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+}
+
+.blog-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.blog-card p {
+  font-size: 16px;
+}
+
+/* Testimonials Section */
+.testimonials {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #1a1a3c;
+}
+
+.testimonials h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.testimonials-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.testimonial {
+  background-color: #262646;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+}
+
+.testimonial p {
+  font-style: italic;
+}
+
+.testimonial h4 {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #1a1a3c;
+  font-size: 14px;
+}
+
+.footer a {
+  color: #4a90e2;
+  margin: 0 10px;
+}
+
+.newsletter input {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #4a90e2;
+  margin-right: 10px;
+}
+
+.newsletter button {
+  background-color: #4a90e2;
+  color: #ffffff;
+  border-radius: 4px;
+}
